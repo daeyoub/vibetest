@@ -195,6 +195,12 @@ app.delete('/api/items/:id', requireLogin, async (req, res) => {
   res.json({ message: '삭제되었습니다.' });
 });
 
-app.listen(PORT, () => {
-  console.log(`서버가 http://localhost:${PORT} 에서 실행 중입니다.`);
-});
+// Vercel 등 서버리스 환경에서는 이 파일을 함수 핸들러로 require하므로,
+// 로컬에서 직접 실행했을 때만 포트를 열어 리스니한다.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`서버가 http://localhost:${PORT} 에서 실행 중입니다.`);
+  });
+}
+
+module.exports = app;
