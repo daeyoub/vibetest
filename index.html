@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 - 쇼핑리스트</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container auth-container">
+    <h1>🛒 쇼핑리스트</h1>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="login">로그인</button>
+      <button class="tab-btn" data-tab="register">회원가입</button>
+    </div>
+
+    <form id="login-form" class="tab-panel active">
+      <label for="login-username">아이디</label>
+      <input type="text" id="login-username" required />
+
+      <label for="login-password">비밀번호</label>
+      <input type="password" id="login-password" required />
+
+      <button type="submit">로그인</button>
+    </form>
+
+    <form id="register-form" class="tab-panel">
+      <label for="register-username">아이디</label>
+      <input type="text" id="register-username" required />
+
+      <label for="register-password">비밀번호</label>
+      <input type="password" id="register-password" required />
+
+      <button type="submit">회원가입</button>
+    </form>
+
+    <p id="message" class="message"></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
